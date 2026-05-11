@@ -10,7 +10,6 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['rol'] != 'cliente') {
     }
     exit();
 }
-?>
 
 if (!isset($_SESSION['agendar_servicio']) || !isset($_SESSION['agendar_fotografo'])) {
     header('Location: agendar.php');

@@ -10,7 +10,6 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['rol'] != 'cliente') {
     }
     exit();
 }
-?>
 
 // Obtener próximas citas
 $stmt = $pdo->prepare("

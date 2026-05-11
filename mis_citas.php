@@ -10,7 +10,6 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['rol'] != 'cliente') {
     }
     exit();
 }
-?>
 
 // Obtener todas las citas del usuario
 $stmt = $pdo->prepare("

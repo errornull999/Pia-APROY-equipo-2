@@ -10,7 +10,6 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['rol'] != 'cliente') {
     }
     exit();
 }
-?>
 
 $paso = isset($_GET['paso']) ? $_GET['paso'] : 1;
 $servicio_id = isset($_GET['servicio']) ? $_GET['servicio'] : (isset($_POST['servicio_id']) ? $_POST['servicio_id'] : null);
