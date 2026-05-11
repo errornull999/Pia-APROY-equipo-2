@@ -34,6 +34,16 @@ h1, h2, h3, .logo {
     color: #2c2c2c;
 }
 
+/* Color global para todos los títulos fuera del Hero */
+h2 {
+    color: #2c2c2c !important; /* Un gris muy oscuro casi negro */
+    margin-bottom: 15px;
+}
+
+section p {
+    color: #666666; /* Color gris suave para los subtítulos */
+}
+
 img{
     height: 40px;
     width: 40px;

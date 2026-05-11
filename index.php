@@ -16,8 +16,8 @@ $servicios = $stmt->fetchAll();
 
 
 <section id="servicios">
-    <h2 style="text-align: center; color: white;">Nuestros Servicios</h2>
-    <p style="text-align: center; color: white;">Calidad excepcional en cada captura.</p>
+    <<h2 style="text-align: center; color: #2c2c2c; margin-top: 40px;">Nuestros Servicios</h2>
+    <p style="text-align: center; color: #666;">Calidad excepcional en cada captura.</p>
     
     <div class="card-grid">
         <?php foreach($servicios as $servicio): ?>
@@ -33,9 +33,9 @@ $servicios = $stmt->fetchAll();
 </section>
 
 <section id="portfolio" class="container">
-    <h2 style="text-align: center; color: white; margin-top: 50px;">Nuestro Portafolio</h2>
-    <p style="text-align: center; color: white; margin-bottom: 30px;">Una muestra de nuestros momentos favoritos capturados.</p>
-    
+    <<h2 style="text-align: center; color: #2c2c2c; margin-top: 50px;">Nuestro Portafolio</h2>
+    <p style="text-align: center; color: #666; margin-bottom: 30px;">Una muestra de nuestros momentos favoritos capturados.</p>
+        
     <div class="carousel-container">
         <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
         
