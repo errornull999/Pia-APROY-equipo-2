@@ -36,26 +36,43 @@ $servicios = $stmt->fetchAll();
     <h2 style="text-align: center; color: white; margin-top: 50px;">Nuestro Portafolio</h2>
     <p style="text-align: center; color: white; margin-bottom: 30px;">Una muestra de nuestros momentos favoritos capturados.</p>
     
-    <div class="portfolio-grid">
-        <div class="portfolio-item">
-            <img src="img/boda1.jpg" alt="Sesión de Boda">
+    <div class="carousel-container">
+        <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+        
+        <div class="carousel-wrapper">
+            <div class="carousel-slide">
+                <img src="img/boda1.jpg" alt="Sesión de Boda">
+                <img src="img/casual1.jpg" alt="Sesión Casual">
+                <img src="img/graduacion1.jpg" alt="Sesión de Graduación">
+                <img src="img/infantil1.jpg" alt="Sesión Infantil">
+            </div>
         </div>
-        <div class="portfolio-item">
-            <img src="img/casual1.jpg" alt="Sesión Casual">
-        </div>
-        <div class="portfolio-item">
-            <img src="img/graduacion1.jpg" alt="Sesión de Graduación">
-        </div>
-        <div class="portfolio-item">
-            <img src="img/infantil1.jpg" alt="Sesión Infantil">
-        </div>
-        <div class="portfolio-item">
-            <img src="img/evento1.jpg" alt="Evento Social">
-        </div>
-        <div class="portfolio-item">
-            <img src="img/retrato1.jpg" alt="Retrato Profesional">
-        </div>
+        
+        <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
     </div>
 </section>
+
+<script>
+    let currentIndex = 0;
+
+    function moveSlide(direction) {
+        const slides = document.querySelectorAll('.carousel-slide img');
+        const totalSlides = slides.length;
+        const carousel = document.querySelector('.carousel-slide');
+
+        currentIndex += direction;
+
+        // Validar límites para que sea infinito
+        if (currentIndex >= totalSlides) {
+            currentIndex = 0;
+        } else if (currentIndex < 0) {
+            currentIndex = totalSlides - 1;
+        }
+
+        // Mover el carrusel
+        const offset = -currentIndex * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
+</script>
 
 <?php include 'footer.php'; ?>
