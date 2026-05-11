@@ -32,4 +32,30 @@ $servicios = $stmt->fetchAll();
     </div>
 </section>
 
+<section id="portfolio" class="container">
+    <h2 style="text-align: center; color: white; margin-top: 50px;">Nuestro Portafolio</h2>
+    <p style="text-align: center; color: white; margin-bottom: 30px;">Una muestra de nuestros momentos favoritos capturados.</p>
+    
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <img src="img/boda1.jpg" alt="Sesión de Boda">
+        </div>
+        <div class="portfolio-item">
+            <img src="img/casual1.jpg" alt="Sesión Casual">
+        </div>
+        <div class="portfolio-item">
+            <img src="img/graduacion1.jpg" alt="Sesión de Graduación">
+        </div>
+        <div class="portfolio-item">
+            <img src="img/infantil1.jpg" alt="Sesión Infantil">
+        </div>
+        <div class="portfolio-item">
+            <img src="img/evento1.jpg" alt="Evento Social">
+        </div>
+        <div class="portfolio-item">
+            <img src="img/retrato1.jpg" alt="Retrato Profesional">
+        </div>
+    </div>
+</section>
+
 <?php include 'footer.php'; ?>
