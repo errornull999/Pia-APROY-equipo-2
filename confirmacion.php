@@ -1,10 +1,16 @@
 <?php
 require_once 'database.php';
 
-if (!isset($_SESSION['usuario_id'])) {
-    header('Location: login.php');
+// Si no está logueado O no es un cliente, lo mandamos al login o al panel de admin
+if (!isset($_SESSION['usuario_id']) || $_SESSION['rol'] != 'cliente') {
+    if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'admin') {
+        header('Location: admin.php'); // Si es admin intentando entrar a cliente, lo regresamos a su panel
+    } else {
+        header('Location: login.php');
+    }
     exit();
 }
+?>
 
 if (!isset($_SESSION['agendar_servicio']) || !isset($_SESSION['agendar_fotografo'])) {
     header('Location: agendar.php');

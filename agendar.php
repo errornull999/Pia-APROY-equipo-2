@@ -1,10 +1,16 @@
 <?php
 require_once 'database.php';
 
-if (!isset($_SESSION['usuario_id'])) {
-    header('Location: login.php');
+// Si no está logueado O no es un cliente, lo mandamos al login o al panel de admin
+if (!isset($_SESSION['usuario_id']) || $_SESSION['rol'] != 'cliente') {
+    if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'admin') {
+        header('Location: admin.php'); // Si es admin intentando entrar a cliente, lo regresamos a su panel
+    } else {
+        header('Location: login.php');
+    }
     exit();
 }
+?>
 
 $paso = isset($_GET['paso']) ? $_GET['paso'] : 1;
 $servicio_id = isset($_GET['servicio']) ? $_GET['servicio'] : (isset($_POST['servicio_id']) ? $_POST['servicio_id'] : null);
