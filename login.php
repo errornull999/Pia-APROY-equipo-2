@@ -12,16 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->execute([$email]);
     $usuario = $stmt->fetch();
     
-    // Verificar contraseña (funciona con y sin encriptar)
+    // Verificar contraseña encriptada
     $password_correcta = false;
     
     if ($usuario) {
-        // Primero probar comparación normal (texto plano)
-        if ($password == $usuario['password']) {
-            $password_correcta = true;
-        }
-        // Si no, probar con password_verify (encriptado)
-        elseif (password_verify($password, $usuario['password'])) {
+        if (password_verify($password, $usuario['password'])) {
             $password_correcta = true;
         }
     }
