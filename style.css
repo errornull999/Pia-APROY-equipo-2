@@ -5,8 +5,9 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:linear-gradient( to right, #8c7363, #bfa99c);
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #fafafa; /* Un gris casi blanco, muy limpio */
+    color: #333333; /* Texto oscuro pero no negro puro para no cansar la vista */
     min-height: 100vh;
 }
 
@@ -26,6 +27,13 @@ body {
     align-items: center;
     flex-wrap: wrap;
 }
+
+h1, h2, h3, .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #2c2c2c;
+}
+
 img{
     height: 40px;
     width: 40px;
@@ -65,15 +73,17 @@ img{
 /* Cards */
 .card {
     background: white;
-    border-radius: 15px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 30px;
     margin: 20px 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    border: 1px solid #f0f0f0; /* Borde súper sutil */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03); /* Sombra casi invisible */
+    transition: all 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1); /* La sombra aparece al pasar el mouse */
 }
 
 .card-grid {
@@ -181,11 +191,21 @@ img{
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
     color: white;
-    background-image: url(img/imagen3.jpeg) ;
-    background-repeat: no-repeat;
-    border-radius: 10px;
+    /* El linear-gradient negro semi-transparente oscurece la foto para que la letra brille */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/imagen3.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: white; /* Forzamos blanco para el titulo sobre la foto */
+    margin-bottom: 20px;
 }
 
 .hero h1 {
