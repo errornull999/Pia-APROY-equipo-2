@@ -432,3 +432,108 @@ img{
         height: 300px; /* Más pequeño en celulares */
     }
 }
+
+/* Estilos mejorados para el Calendario */
+.calendar-section {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.calendar-title {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.btn-nav {
+    text-decoration: none;
+    color: #b89c8b;
+    font-weight: bold;
+    padding: 8px 15px;
+    border: 1px solid #b89c8b;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.btn-nav:hover {
+    background: #b89c8b;
+    color: white;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.day {
+    aspect-ratio: 1 / 1;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+    position: relative;
+}
+
+.day:hover { background: #fafafa; }
+.today { border: 2px solid #b89c8b; background: #fff9f5; }
+.has-event { background: #fdf8f5; border-color: #eed7ac; }
+
+.event-dot {
+    width: 6px;
+    height: 6px;
+    background: #b89c8b;
+    border-radius: 50%;
+    margin-top: 4px;
+}
+
+.day-number { font-weight: 500; font-size: 1.1rem; }
+
+/* Panel de Detalles */
+.details-panel {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+}
+
+.details-list li {
+    padding: 15px;
+    background: #fdfdfd;
+    border-left: 4px solid #b89c8b;
+    margin-bottom: 10px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.status-tag {
+    float: right;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 10px;
+    color: white;
+}
+
+.status-tag.pendiente { background: #ed8936; }
+.status-tag.confirmada { background: #48bb78; }
+
+.placeholder { color: #999; font-style: italic; text-align: center; }
