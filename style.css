@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -15,6 +19,10 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+}
+
+section {
+    padding: 80px 20px; /* Separa los bloques de contenido entre sí */
 }
 
 /* Header */
@@ -126,9 +134,11 @@ img{
 }
 
 .btn-primary:hover {
-    background: #b2b3bd;
-    transform: scale(1.05);
+    background: #8c7363; /* El color oscuro original de su degradado anterior */
+    transform: translateY(-3px); /* Se levanta suavemente hacia arriba */
+    box-shadow: 0 5px 15px rgba(138, 115, 99, 0.4); /* Sombra difusa del mismo color */
 }
+
 .btn-primary2:hover {
     background: #b2b3bd;
     transform: scale(1.05);
