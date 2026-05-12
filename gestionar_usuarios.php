@@ -67,7 +67,7 @@ include 'header.php';
 </div>
 
 <div style="margin-top: 20px;">
-    <a href="index.php" class="btn">← Volver al Panel</a>
+    <a href="admin.php" class="btn">← Volver al Panel</a>
 </div>
 
 <?php include 'footer.php'; ?>
