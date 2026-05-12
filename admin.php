@@ -22,7 +22,8 @@ $ingresos = $stmt->fetch()['total'] ?? 0;
 include 'header.php';
 ?>
 
-<h2>Panel de Administración</h2>
+<h1>Panel de Administración</h1>
+<br>
 <p>Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario_nombre']); ?></p>
 
 <div class="stats-grid">
@@ -71,7 +72,8 @@ include 'header.php';
 </div>
 
 <section class="calendario-seccion">
-    <h2>Agenda Mensual</h2>
+    <h1 style="text-align: center;">Agenda Mensual</h1>
+    <br>
     <?php 
     // Le avisamos al calendario que está siendo incluido dentro de otra página
     $ocultar_menus = true; 
