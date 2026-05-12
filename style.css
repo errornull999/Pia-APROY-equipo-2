@@ -537,3 +537,38 @@ img{
 .status-tag.confirmada { background: #48bb78; }
 
 .placeholder { color: #999; font-style: italic; text-align: center; }
+
+/* --- Diseño Profesional del Pie de Página --- */
+.main-footer {
+    background-color: #1a1a1a; /* Fondo oscuro elegante */
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 60px;
+}
+
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    margin: 0 15px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-links img {
+    height: 30px; /* Tamaño uniforme para iconos */
+    width: 30px;
+    filter: brightness(0) invert(1); /* Los hace blancos para que se vean sobre negro */
+}
+
+.social-links a:hover {
+    transform: scale(1.2); /* Efecto de crecimiento al pasar el mouse */
+}
+
+.main-footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    color: white !important;
+}
