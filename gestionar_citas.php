@@ -72,7 +72,13 @@ include 'header.php';
                 <td><?php echo htmlspecialchars($cita['cliente']); ?></td>
                 <td><?php echo htmlspecialchars($cita['email']); ?></td>
                 <td><?php echo htmlspecialchars($cita['servicio']); ?></td>
-                <td><?php echo htmlspecialchars($cita['fotografo']); ?></td>
+                <td>
+                    <?php if ($cita['fotografos_id'] == 99): ?>
+                        <span style="background: #e53e3e; color: white; padding: 3px 8px; border-radius: 5px; font-size: 12px;">⚠️ Sin Asignar</span>
+                    <?php else: ?>
+                        <?php echo htmlspecialchars($cita['fotografo']); ?>
+                    <?php endif; ?>
+                </td>
                 <td><?php echo date('d/m/Y', strtotime($cita['fecha'])); ?></td>
                 <td><?php echo $cita['hora']; ?></td>
                 <td>$<?php echo number_format($cita['total'], 0, ',', '.'); ?></td>
@@ -85,6 +91,9 @@ include 'header.php';
                 </td>
                 <td>
                     <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+                        <?php if($cita['fotografos_id'] == 99 && $cita['estado'] != 'cancelada' && $cita['estado'] != 'completada'): ?>
+                            <a href="asignar_fotografo.php?id=<?php echo $cita['id']; ?>" class="btn btn-primary" style="padding: 5px 10px; font-size: 12px; background: #667eea; border-color: #667eea;">Asignar</a>
+                        <?php endif; ?>
                         <?php if($cita['estado'] == 'pendiente'): ?>
                             <a href="?accion=confirmar&id=<?php echo $cita['id']; ?>" class="btn btn-primary" style="padding: 5px 10px; font-size: 12px;">Confirmar</a>
                         <?php endif; ?>

@@ -32,11 +32,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fecha = $_POST['fecha'];
     $hora = $_POST['hora'];
     
-    // Validar que no esté ocupado
-    $stmt = $pdo->prepare("SELECT id FROM citas WHERE fotografos_id = ? AND fecha = ? AND hora = ? AND estado != 'cancelada'");
-    $stmt->execute([$fotografo_id, $fecha, $hora]);
+    // Validar que no esté ocupado (Excepto si es el fotógrafo 99 pendiente de asignar)
+    $ocupado = false;
+    if ($fotografo_id != 99) {
+        $stmt = $pdo->prepare("SELECT id FROM citas WHERE fotografos_id = ? AND fecha = ? AND hora = ? AND estado != 'cancelada'");
+        $stmt->execute([$fotografo_id, $fecha, $hora]);
+        if ($stmt->fetch()) {
+            $ocupado = true;
+        }
+    }
     
-    if ($stmt->fetch()) {
+    if ($ocupado) {
         $error = 'El fotógrafo no está disponible en esa fecha y hora';
     } else {
         $stmt = $pdo->prepare("INSERT INTO citas (usuario_id, servicio_id, fotografos_id, fecha, hora, estado, total) VALUES (?, ?, ?, ?, ?, 'confirmada', ?)");
@@ -58,7 +64,7 @@ include 'header.php';
 ?>
 
 <div class="card">
-    <a href="elegir_fotografo.php" style="color: #667eea;">← Volver al Inicio</a>
+    <a href="agendar.php" style="color: #667eea;">← Volver al Inicio</a>
     <h2>Confirmación Final</h2>
     
     <?php if(isset($error)): ?>

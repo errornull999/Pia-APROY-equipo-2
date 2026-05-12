@@ -1,3 +1,4 @@
+/* Ya no se usa este archivo, pero lo dejamos por si queremos volver a la versión con selección de fotógrafo
 <?php
 require_once 'database.php';
 
@@ -48,4 +49,5 @@ include 'header.php';
     </div>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?> 
+*/

@@ -16,7 +16,7 @@ $servicios = $stmt->fetchAll();
 
 
 <section id="servicios">
-    <h1 style="text-align: center; color: #2c2c2c; margin-top: 40px;">Nuestros Servicios</h1>
+    <h1 style="text-align: center; color: #2c2c2c; margin-top: 10px;">Nuestros Servicios</h1>
     <br>
     <p style="text-align: center; color: #666;">Calidad excepcional en cada captura.</p>
     
@@ -34,7 +34,7 @@ $servicios = $stmt->fetchAll();
 </section>
 
 <section id="portfolio" class="container">
-    <h1 style="text-align: center; color: #2c2c2c; margin-top: 50px;">Nuestro Portafolio</h1>
+    <h1 style="text-align: center; color: #2c2c2c; margin-top: 10px;">Nuestro Portafolio</h1>
     <br>
     <p style="text-align: center; color: #666; margin-bottom: 30px;">Una muestra de nuestros momentos favoritos capturados.</p>
         

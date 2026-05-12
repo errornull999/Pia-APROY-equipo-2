@@ -16,7 +16,8 @@ $servicio_id = isset($_GET['servicio']) ? $_GET['servicio'] : (isset($_POST['ser
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $paso == 1) {
     $_SESSION['agendar_servicio'] = $_POST['servicio_id'];
-    header('Location: elegir_fotografo.php');
+    $_SESSION['agendar_fotografo'] = 99; // Forzamos el ID "Pendiente"
+    header('Location: confirmacion.php'); // Saltamos directo al calendario
     exit();
 }
 
