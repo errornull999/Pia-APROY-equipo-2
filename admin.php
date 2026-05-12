@@ -69,9 +69,14 @@ include 'header.php';
         <a href="gestionar_usuarios.php" class="btn btn-primary">Gestionar</a>
     </div>
 </div>
+
 <section class="calendario-seccion">
     <h2>Agenda Mensual</h2>
-    <?php include 'calendario.php'; ?>
+    <?php 
+    // Le avisamos al calendario que está siendo incluido dentro de otra página
+    $ocultar_menus = true; 
+    include 'calendario.php'; 
+    ?>
 </section>
 
 <?php include 'footer.php'; ?>

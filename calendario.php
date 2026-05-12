@@ -44,7 +44,9 @@ foreach ($citas as $cita) {
 
 $nombres_meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
-include 'header.php'; 
+if (!isset($ocultar_menus)) {
+    include 'header.php';
+} 
 ?>
 
 <div class="calendar-section">
@@ -112,4 +114,8 @@ function showDetails(dia) {
 }
 </script>
 
-<?php include 'footer.php'; ?>
+<?php 
+if (!isset($ocultar_menus)) {
+    include 'footer.php'; 
+}
+?>
