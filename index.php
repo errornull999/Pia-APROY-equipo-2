@@ -43,10 +43,12 @@ $servicios = $stmt->fetchAll();
         
         <div class="carousel-wrapper">
             <div class="carousel-slide">
-                <img src="img/boda1.jpg" alt="Sesión de Boda">
-                <img src="img/casual1.jpg" alt="Sesión Casual">
-                <img src="img/graduacion1.jpg" alt="Sesión de Graduación">
+                <img src="img/PaisajeByN.jpeg" alt="Sesión de Paisajes">
+                <img src="img/parejas1.jpg" alt="Sesión de Parejas">
+                <img src="img/individual1.jpg" alt="Sesión Individual">
+                <img src="img/familiar1.jpg" alt="Sesión Familiar">
                 <img src="img/infantil1.jpg" alt="Sesión Infantil">
+                
             </div>
         </div>
         
